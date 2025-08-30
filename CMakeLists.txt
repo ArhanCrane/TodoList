@@ -15,20 +15,22 @@ userver_setup_environment()
 
 # Common sources
 add_library(${PROJECT_NAME}_objs OBJECT
-    src/hello.hpp
-    src/hello.cpp
+    to_do_list_files/crud_operation.hpp
+    to_do_list_files/crud_operation.cpp
+    to_do_list_files/user_sign_in_out.hpp
+    to_do_list_files/user_sign_in_out.cpp
 )
 target_link_libraries(${PROJECT_NAME}_objs PUBLIC userver::postgresql)
 
 
 # The Service
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} to_do_list_files/main.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_objs)
 
 
 # Unit Tests
 add_executable(${PROJECT_NAME}_unittest
-    src/hello_test.cpp
+    to_do_list_files/hello_test.cpp
 )
 target_link_libraries(${PROJECT_NAME}_unittest PRIVATE ${PROJECT_NAME}_objs userver::utest)
 add_google_tests(${PROJECT_NAME}_unittest)
@@ -36,7 +38,7 @@ add_google_tests(${PROJECT_NAME}_unittest)
 
 # Benchmarks
 add_executable(${PROJECT_NAME}_benchmark
-    src/hello_benchmark.cpp
+    to_do_list_files/hello_benchmark.cpp
 )
 target_link_libraries(${PROJECT_NAME}_benchmark PRIVATE ${PROJECT_NAME}_objs userver::ubench)
 add_google_benchmark_tests(${PROJECT_NAME}_benchmark)
