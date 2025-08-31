@@ -6,6 +6,7 @@ Components:
 - CLI - C++, libcurl library
 - API - Userver, postgresql
 ---
+
 Three http handlers:
 1. /todos <br>
 	Methods: GET, POST, DELETE, PUT <br>
