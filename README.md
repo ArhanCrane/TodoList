@@ -2,6 +2,10 @@ A RESTful API to allow users to manage their to-do list.
 There's a cpp file of a command-line interface in the CLI folder.
 
 ---
+Components:
+- CLI - C++, libcurl library
+- API - Userver, postgresql
+---
 Three http handlers:
 1. /todos <br>
 	Methods: GET, POST, DELETE, PUT <br>
