@@ -3,7 +3,7 @@ There's a cpp file of a command-line interface in the CLI folder.
 
 ---
 Three http handlers:
-1. /todos
+1. /todos <br>
 	Methods: GET, POST, DELETE, PUT
 	GET: localhost:PORT/todos?name=NAME&title=TITLE
 	This method returns the title and the value as an array.
@@ -18,12 +18,12 @@ Three http handlers:
 	name=NAME&title=TITLE&value=VALUE
 	The PUT request updates the note of a certain name replacing the value with a particular one.
 
-2. /register
+2. /register <br>
 	Methods: POST
 	POST: localhost:PORT/register?name=NAME&password=PASSWORD
 	user-registration-handler put the name and the password into hello_schema.users
 
-3. /login
+3. /login <br>
 	Methods: GET
 	GET: localhost:PORT/login?name=NAME&password=PASSWORD
 	user-login-handler takes a password if it exists in a database and compare it to the password in a GET request. If these two passwords are equal then the user is getting an access to their notes.
